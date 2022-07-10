@@ -23,9 +23,9 @@ return new class extends Migration
             $table->bigInteger('cantidad_inventario');
             $table->date('fecha_embarque');
 
-            $table->foreign('talla_id')->references('id')->on('tallas');
+            $table->foreign('talla_id')->references('id')->on('tallas')->onDelete('cascade');
 
-            $table->foreign('marca_id')->references('id')->on('marcas');
+            $table->foreign('marca_id')->references('id')->on('marcas')->onDelete('cascade');
         });
     }
 

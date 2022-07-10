@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Marca;
+use App\Models\Producto;
 
 class MarcaController extends Controller
 {
@@ -114,8 +115,17 @@ class MarcaController extends Controller
     public function destroy($id)
     {
         $marca = Marca::findOrfail($id);
-        $marca->delete();
-        return redirect(route('marca.index'));
+        $productosAsociados = Producto::where('marca_id',$marca->id)->get()->count();
+        if($productosAsociados > 0)
+        {
+            $message = ['msg' => 'No se puede eliminar la marca debido a que tiene productos asociados'];
+            return redirect(route('marca.index'))->withErrors($message);
+        } 
+        else{
+            $message = ['success' => 'El registro se elimino correctamente. '];
+            $marca->delete();
+            return redirect(route('marca.index'))->with($message);
+        }       
         
     }
 }
