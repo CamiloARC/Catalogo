@@ -31,11 +31,12 @@
                     <td>{{ $producto->fecha_embarque}} </td>
                     <td>
                         
-                        <form action="{{ route('marca.destroy',$producto->id) }}" method="POST">
+                        <form action="{{ route('producto.destroy',$producto->id) }}" method="POST" 
+                            onsubmit="return confirm('¿Esta seguro de eliminar el registro?');">
                             @csrf
                             {{ method_field('DELETE') }}
 
-                            <a href="{{ route('marca.edit',$producto->id) }}" class="btn btn-sm btn-primary">
+                            <a href="{{ route('producto.edit',$producto->id) }}" class="btn btn-sm btn-primary">
                                 <i class="fa-solid fa-edit"></i> Editar </a>
 
                             <button type="submit" class="btn btn-sm btn-danger">

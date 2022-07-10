@@ -1,12 +1,10 @@
-
-
-<form action="{{route('marca.edit',$marca->id)}}" method="POST">
+<form action="{{route('marca.update',$marca->id)}}" method="POST">
     @csrf
     <div class="row">
       <div class="form-group mb-2 col-md-3">
         <label for="nombre">Nombre de la marca</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" maxlength="255" pattern="[A-Za-z ]+" 
-          value="{{$marca->nombre}}" required>
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" maxlength="255" 
+          pattern="[A-Za-z0-9\s]+" value="{{$marca->nombre}}" required>
       </div>
       <div class="form-group mb-2 col-md-3">
         <label for="referencia">Referencia</label>

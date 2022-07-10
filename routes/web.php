@@ -31,6 +31,9 @@ Route::group(['prefix' => 'marcas'], function () {
 Route::group(['prefix' => 'productos'], function () {
     Route::get('', [ProductoController::class, 'index'])->name('producto.index');
     Route::get('/create', [ProductoController::class, 'create'])->name('producto.create'); 
-    Route::post('/store', [ProductoController::class, 'store'])->name('producto.store'); 
+    Route::post('/store', [ProductoController::class, 'store'])->name('producto.store');
+    Route::get('/edit/{id}', [ProductoController::class, 'edit'])->name('producto.edit');
+    Route::post('/edit/{id}', [ProductoController::class, 'update'])->name('producto.update'); 
+    Route::delete('/destroy/{id}', [ProductoController::class, 'destroy'])->name('producto.destroy');  
 });
 

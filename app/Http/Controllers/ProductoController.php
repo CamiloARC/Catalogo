@@ -72,7 +72,7 @@ class ProductoController extends Controller
         $nuevoProducto->fecha_embarque = $request->input('fechaEmbarque');
 
         $nuevoProducto->save();
-        return redirect(route('productos.index'));
+        return redirect(route('producto.index'));
     }
 
     /**
@@ -94,7 +94,17 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tallas = Talla::all();
+        $marcas = Marca::all();
+        $hoy = Carbon::today()->format('Y-m-d');
+        $producto = Producto::findOrFail($id);
+        
+        return view('modulos.producto.edit.layout', [
+            "tallas" => $tallas,
+            "marcas" => $marcas,
+            "hoy" => $hoy,
+            "producto" => $producto
+        ]);
     }
 
     /**
@@ -106,7 +116,34 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'nombre' => ['required','string'],
+            'talla' => ['required'],
+            'marca' => ['required'],
+            'observaciones' => ['required'],
+            'cantidadInventario' => ['required','numeric'],
+            'fechaEmbarque' => ['required','date'],
+        ],[
+            'nombre.required' => 'El campo nombre es requerido.',
+            'talla.required' => 'El campo talla es requerido.',
+            'marca.required' => 'El campo marca es requerido.',
+            'observaciones.required' => 'El campo observaciones es requerido.',
+            'cantidadInventario.required' => 'El campo cantidad es requerido.',
+            'fechaEmbarque.required' => 'El campo fecha de embarque es requerido.',
+        ]);
+
+        $producto = Producto::findOrFail($id);
+        
+        $producto->nombre = $request->input('nombre');
+        $producto->talla_id = $request->input('talla');
+        $producto->marca_id = $request->input('marca');
+        $producto->observaciones = $request->input('observaciones');
+        $producto->cantidad_inventario = $request->input('cantidadInventario');
+        $producto->fecha_embarque = $request->input('fechaEmbarque');
+
+        $producto->save();
+
+        return redirect(route('producto.index'));
     }
 
     /**
@@ -117,6 +154,8 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $producto = Producto::findOrfail($id);
+        $producto->delete();
+        return redirect(route('producto.index'));
     }
 }

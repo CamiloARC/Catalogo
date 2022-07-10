@@ -23,7 +23,8 @@
                     <td>{{ $marca->referencia}} </td>
                     <td>
                         
-                        <form action="{{ route('marca.destroy',$marca->id) }}" method="POST">
+                        <form action="{{ route('marca.destroy',$marca->id) }}" method="POST"
+                            onsubmit="return confirm('¿Esta seguro de eliminar el registro?');">
                             @csrf
                             {{ method_field('DELETE') }}
 

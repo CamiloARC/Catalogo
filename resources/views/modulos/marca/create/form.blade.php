@@ -5,8 +5,8 @@
     <div class="row">
       <div class="form-group mb-2 col-md-4">
         <label for="nombre">Nombre de la marca (*)</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" maxlength="255" pattern="[A-Za-z ]+" 
-          value="" required>
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" maxlength="255" 
+          pattern="[A-Za-z0-9\s]+" value="" required>
       </div>
       <div class="form-group mb-2 col-md-4">
         <label for="referencia">Referencia (*)</label>

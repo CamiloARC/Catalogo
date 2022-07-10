@@ -7,7 +7,7 @@
     </div>
     <div class="card-body">
         <div class="row">
-            @include('modulos.producto.create.form')
+            @include('modulos.producto.edit.form')
         </div>
     </div>
 @endsection
