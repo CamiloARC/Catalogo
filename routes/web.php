@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\OpenDashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get('/', OpenDashboard::class)->name('dashboard');
 
+// Route::resource('/marcas', MarcaController::class);
+Route::group(['prefix' => 'marcas'], function () {
+    Route::get('', [MarcaController::class, 'index'])->name('marca.index'); 
+    Route::get('/create', [MarcaController::class, 'create'])->name('marca.create'); 
+    Route::post('/store', [MarcaController::class, 'store'])->name('marca.store'); 
+    Route::get('/edit/{id}', [MarcaController::class, 'edit'])->name('marca.edit'); 
+    Route::post('/edit/{id}', [MarcaController::class, 'update'])->name('marca.update'); 
+    Route::delete('/destroy/{id}', [MarcaController::class, 'destroy'])->name('marca.destroy'); 
+});
 

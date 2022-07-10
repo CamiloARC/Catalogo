@@ -1,3 +1,5 @@
+ /* @import '~jquery-ui/themes/base/all.css'; */
+
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
@@ -48,7 +50,7 @@ a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #3061E8;
+    background: #3a6bf2;
     color: #fff;
     transition: all 0.3s;
 }
@@ -59,7 +61,7 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #3a6bf2;
+    background: #164DE3;
 }
 
 #sidebar ul p {
@@ -74,14 +76,14 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: #3061E8;
+    color: #164DE3;
     background: #fff;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #3a6bf2;
+    background: #164DE3;
 }
 
 a[data-toggle="collapse"] {
@@ -99,7 +101,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #3a6bf2;
+    /* background: #0136C6; */
 }
 
 /* ---------------------------------------------------
@@ -113,7 +115,7 @@ ul ul a {
 }
 
 .card-header {
-    background: #3061E8;
+    background: #164DE3;
     color: #fff;
     transition: all 0.3s;
     border-radius: 0% !important; 

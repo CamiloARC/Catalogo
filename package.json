@@ -6,6 +6,8 @@
     },
     "devDependencies": {
         "axios": "^0.25",
+        "jquery": "^3.5.1",
+        "jquery-ui": "^1.13.1",
         "laravel-vite-plugin": "^0.2.1",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",

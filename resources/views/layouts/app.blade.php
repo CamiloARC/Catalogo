@@ -13,11 +13,12 @@
         <!-- Styles -->
         {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/2b59d0a5dd.js" crossorigin="anonymous"></script>
-
+        
         <!-- Scripts -->
         {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <script src="https://kit.fontawesome.com/2b59d0a5dd.js" crossorigin="anonymous"></script>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -39,7 +40,9 @@
         
         @yield('scripts')
         <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        {{-- <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script> --}}
+        {{-- @vite('js/jquery.min.js') --}}
     </body>
 </html>
