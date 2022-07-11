@@ -72,7 +72,7 @@ class ProductoController extends Controller
         $nuevoProducto->fecha_embarque = $request->input('fechaEmbarque');
 
         $nuevoProducto->save();
-        return redirect(route('producto.index'));
+        return redirect(route('producto.index'))->with(['success' => 'El registro se crea correctamente.']);
     }
 
     /**
@@ -143,7 +143,7 @@ class ProductoController extends Controller
 
         $producto->save();
 
-        return redirect(route('producto.index'));
+        return redirect(route('producto.index'))->with(['success' => 'El registro se edita correctamente.']);
     }
 
     /**
@@ -156,6 +156,6 @@ class ProductoController extends Controller
     {
         $producto = Producto::findOrfail($id);
         $producto->delete();
-        return redirect(route('producto.index'));
+        return redirect(route('producto.index'))->with(['success' => 'El registro se borra correctamente.']);
     }
 }

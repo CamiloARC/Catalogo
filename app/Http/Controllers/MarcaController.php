@@ -51,7 +51,7 @@ class MarcaController extends Controller
         $nuevaMarca->referencia = $request->input('referencia');
   
         $nuevaMarca->save();
-        return redirect(route('marca.index'));
+        return redirect(route('marca.index'))->with(['success' => 'El registro se crea correctamente.']);
     }
 
     /**
@@ -103,7 +103,7 @@ class MarcaController extends Controller
 
         $marca->save();
 
-        return redirect(route('marca.index'));
+        return redirect(route('marca.index'))->with(['success' => 'El registro se edita correctamente.']);
     }
 
     /**

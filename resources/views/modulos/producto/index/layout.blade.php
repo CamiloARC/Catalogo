@@ -13,6 +13,7 @@
             </div>
         </div>
         <div class="row">
+            @include('modulos.marca.index.messages')
             @include('modulos.producto.index.table')
         </div>
     </div>
